@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Project } = require('../../models');
+// const {} = require('../../models');     insert the name of the project model between the {} and replace name line 7, 20 
 const withAuth = require('../../utils/auth');
 
 router.post('/', withAuth, async (req, res) => {
