@@ -1,5 +1,5 @@
-const router = require('express').Router();
 const { Trip } = require('../../models');
+
 
 router.post('/', async (req, res) => {
   try {
