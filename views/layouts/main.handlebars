@@ -8,23 +8,27 @@
     integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
   <link rel="stylesheet" href="/css/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body class="bg-light">
   <nav class="navbar bg-primary" data-bs-theme="dark">
     <div class="container-fluid">
-      <a class="navbar-brand fs-1" href="#">🛩 Budget My Vacay</a>
+      <a class="navbar-brand fs-1 animate__animated animate__slideInLeft" href="/">🛩 <span class="marker">Budget My Vacay</span> 🛩</a>
       <ul class="nav justify-content-end">
         {{#if logged_in}}
-        Welcome
-        {{user_name}}
+        <h2 class="text-white fs-3 m-2 font-monospace">Welcome {{user_name}}!</h2>
+
         <li class="nav-item">
-        <a class="nav-link" href='/profile'>profile</a>
+          <a class="nav-link text-white text-decoration-underline fs-4 font-monospace" href='/profile'>profile</a>
         </li>
-        <button class="nav-item" id='logout'>logout</button>
+        <button class="nav-item btn btn-link text-white fs-4 font-monospace" id='logout'>logout</button>
         {{else}}
         <li class="nav-item">
-          <a class="nav-link text-white fs-4" href="/login">Login</a>
+          <a class="nav-link text-white fs-4 font-monospace" href="/login">Login</a>
         </li>
       </ul>
     </div>

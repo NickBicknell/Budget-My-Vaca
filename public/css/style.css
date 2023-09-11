@@ -1,3 +1,9 @@
+:root {
+  --animate-duration: 1200ms;
+  --animate-delay: 2s;
+  
+}
+
 header, .project:not(:last-child) {
   border-bottom: 1px solid #ccc;
 }
@@ -21,4 +27,8 @@ header, .project:not(:last-child) {
   color: #056605;
   font-weight: bold;
   margin-left: -5px;
+}
+
+.marker {
+  font-family: 'Permanent Marker', cursive;
 }
