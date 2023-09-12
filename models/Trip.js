@@ -24,6 +24,10 @@ Trip.init(
       type: DataTypes.INTEGER,
       allowNull: false,
     },
+    Money:{
+      type: DataTypes.INTEGER,
+      allowNull: false
+    }
   },
   {
     hooks: {
