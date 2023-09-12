@@ -1,18 +1,93 @@
 [
   {
-    "name": "Music Near Me",
-    "day": "A mobile app that will send you notifications whenever a concert is playing in your area.",
-    "cost": 5000,
-    
+    "name": "Shopping",
+    "day": "1",
+    "cost": 150.00,
+    "time": 2
+  },  
+  {
+    "name": "Dinner at Spencer's Steak & Spirits",
+    "day": "1",
+    "cost": 150.00,
+    "time": 7  
   },
   {
-    "name": "The Ultimate Tech Quiz",
-    "description": "A web app that will give users 10 new technical questions each day and track their progress in things like programming, cybersecurity, database architecture, and more!",
-    "needed_funding": 10000
+    "name": "Breakfast at Skywalk",
+    "day": "2",
+    "cost": 20.00,
+    "time": 9
   },
   {
-    "name": "Roll 'Em Up",
-    "description": "A game for Windows and macOS where players move a ball through a series of increasingly challenging mazes.",
-    "needed_funding": 800
+    "name": "Skiing",
+    "day": "2",
+    "cost": 105.00,
+    "time": 10
+  },
+  {
+    "name": "Lunch at Peak 9 Pizza",
+    "day": "2",
+    "cost": 50.00,
+    "time": 1
+  },
+  {
+    "name": "Dinner at Pub at the Hub",
+    "day": "2",
+    "cost": 100.00,
+    "time": 7
+  },
+  {
+    "name": "Breakfast at Skywalk",
+    "day": "3",
+    "cost": 20.00,
+    "time": 9
+  },
+  {
+    "name": "Snowboarding",
+    "day": "3",
+    "cost": 105.00,
+    "time": 10
+  },
+  {
+    "name": "Lunch at Beaver Den Food Court",
+    "day": "3",
+    "cost": 50.00,
+    "time": 1
+  },
+  {
+    "name": "Dinner at Pub at Copper Top",
+    "day": "3",
+    "cost": 100.00,
+    "time": 7
+  },
+  {
+    "name": "Breakfast at Skywalk",
+    "day": "4",
+    "cost": 20.00,
+    "time": 9
+  },
+  {
+    "name": "Dog Sleading",
+    "day": "4",
+    "cost": 180.00,
+    "time": 10
+  },
+  {
+    "name": "Dinner and Drinks at Ember",
+    "day": "4",
+    "cost": 200.00,
+    "time": 7
+  },
+  {
+    "name": "Brunch at Breckfast",
+    "day": "5",
+    "cost": 50.00,
+    "time": 11
+  },
+  {
+    "name": "Shopping",
+    "day": "5",
+    "cost": 150.00,
+    "time": 1
   }
 ]
+
