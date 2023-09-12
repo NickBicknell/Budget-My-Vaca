@@ -11,7 +11,7 @@ SO THAT my trip will be organized and less stressful
 ## Acceptance Criteria
 
 ```
-GIVEN that the user visits the Budget My Vaca application
+GIVEN that the user visits the Budget My Vacay application
 WHEN the user lands on the homepage
 THEN they are met with the title of the app, a button to start planning their trip, and a login and signup button
 WHEN the user clicks login
