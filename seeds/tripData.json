@@ -1,0 +1,13 @@
+[
+  {
+    "name": "Colorado",
+    "days": "5",
+    "budget": "$3,000"
+   
+  },
+  {
+    "name": "Hawaii",
+    "days": "10",
+    "budget": "$10,000"
+  }
+]
