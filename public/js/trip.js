@@ -1,13 +1,4 @@
-function renderTableDays() {
-    if (license !== "None") {
-      return `![License ${license}](https://img.shields.io/badge/license-${license}-yellow.svg)`
-    } else {
-      return ''
-    }
-  }
-
 `<h1 class='fs-2 mb-5'>Spending Money: {{trip_budget}}</h1>
-
 
 <div class='row mb-5'>
   <div class='col-2'>
@@ -24,8 +15,8 @@ function renderTableDays() {
   <div class="col-10">
       <button type='button' class='btn btn-primary'><a
           class='text-white link-underline-primary'
-          id='new-vacay-btn'
+          id='new-activity-btn'
           href='/'
-        >New Vacay</a></button>
+        >New Activity</a></button>
   </div>
 </div>`
