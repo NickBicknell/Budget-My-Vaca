@@ -1,5 +1,7 @@
 const router = require('express').Router();
-const { Project, User } = require('../models');
+
+const { Project, User } = require('../models');    
+
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -80,6 +82,27 @@ router.get('/login', (req, res) => {
   }
 
   res.render('login');
+});
+
+
+
+router.get('/newVacay', (req, res) => {
+  if (req.session.logged_in) {
+    res.redirect('/newVacay');
+    return;
+  }
+
+  res.render('newVacay');
+});
+
+router.get('/currentVacay', (req, res) => {
+  
+  if (req.session.logged_in) {
+    res.redirect('/currentVacay');
+    return;
+  }
+
+  res.render('currentVacay');
 });
 
 module.exports = router;
