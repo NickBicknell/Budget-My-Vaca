@@ -12,14 +12,14 @@ Activities.belongsTo(Trip, {
   foreignKey: 'trip_id'
 });
 
-// User.hasMany(Project, {
-//   foreignKey: 'user_id',
-//   onDelete: 'CASCADE'
-// });
+User.hasMany(Trip, {
+  foreignKey: 'user_id',
+  onDelete: 'CASCADE'
+});
 
-// Project.belongsTo(User, {
-//   foreignKey: 'user_id'
-// });
+Trip.belongsTo(User, {
+  foreignKey: 'user_id'
+ });
 
 module.exports = { Trip, Activities, User };
 

@@ -1,5 +1,26 @@
 # Budget-My-Vacay
 
+# About
+This application allows users to budget the expenses of their vacation.
+
+# Desctiption
+The application allows the user to put in the city they are visiting and for how many days. Then they add in the activities they would like to do and what they cost and the application will do the budgeting for the user.
+
+# Challenges
+Some challenges we faced were 
+
+# Future Development
+For future development, 
+
+# Motivation
+Our motivation was that we like to travel and would love to have an application that helps us plan and budget our vacations.
+
+# Sucess
+We succeeded in creating a working vacation budgeting application.
+
+# Contributors
+Nick Bicknell, Joshua James, & Mandy Douglas.
+
 ## User Story
 
 ```
