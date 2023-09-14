@@ -87,23 +87,23 @@ router.get('/newVacay', withAuth, async (req, res) => {
   }
 });
 
-router.get('/currentVacay', withAuth, async (req, res) => {
-  try {
-    const userData = await User.findByPk(req.session.user_id, {
-      attributes: { exclude: ['password'] },
-    });
+// router.get('/currentVacay', withAuth, async (req, res) => {
+//   try {
+//     const userData = await User.findByPk(req.session.user_id, {
+//       attributes: { exclude: ['password'] },
+//     });
 
-    const user = userData.get({ plain: true });
+//     const user = userData.get({ plain: true });
 
-    res.render('currentVacay', {
-      ...user,
-      logged_in: true,
-      user_name: req.session.user_name,
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
+//     res.render('currentVacay', {
+//       ...user,
+//       logged_in: true,
+//       user_name: req.session.user_name,
+//     });
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
 
 router.get('/trip/:id', async (req, res) => {
   try {
