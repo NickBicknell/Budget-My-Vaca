@@ -44,7 +44,6 @@ router.get('/profile', withAuth, async (req, res) => {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
-      include: [{ model: Project }],
     });
 
     const user = userData.get({ plain: true });
@@ -110,15 +109,8 @@ router.get('/trip/:id', async (req, res) => {
 
     const trip = tripData.get({ plain: true });
 
-    // const userData = await User.findByPk(req.session.user_id, {
-    //   attributes: { exclude: ['password'] },
-    // });
-
-    // const user = userData.get({ plain: true });
-
     res.render('currentVacay', {
       ...trip,
-      // ...user,
       logged_in: true,
       user_name: req.session.user_name,
     });
