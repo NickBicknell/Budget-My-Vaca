@@ -1,23 +1,40 @@
-<div class="row">
-  <div class="d-flex col-4 justify-content-center">
-    <h2 class="font-monospace display-6">Welcome, {{name}}!</h2>
+<div class='row'>
+  <div class='d-flex col-4 justify-content-center'>
+    <h2 class='font-monospace display-6'>Welcome, {{name}}!</h2>
   </div>
-  <div class="d-flex col-8 justify-content-center">
-    <h2 class="font-monospace display-6">Previous Vacays</h2>
+  <div class='d-flex col-8 justify-content-center'>
+    <h2 class='font-monospace display-6'>Previous Vacays</h2>
   </div>
 </div>
-<div class="row">
-  <div class="d-flex col-4 justify-content-center">
-     <button type="button" class="btn btn-primary btn-lg m-2"><a class="text-white link-underline-primary" href="/">New Vacay</a></button>
+<div class='row'>
+  <div class='d-flex col-4 justify-content-center'>
+    <button type='button' class='btn btn-primary btn-lg m-2'><a class='text-white link-underline-primary'
+        id='new-vacay-btn' href='/newVacay'>New Vacay</a></button>
   </div>
-  <div class="d-flex flex-column col-8 justify-content-center">
-  {{#if projects.length}}
-  {{#each projects as |project|}}
-  <button type="button" class="btn btn-primary btn-lg m-2"><a class="text-white link-underline-primary" href="/project/{{project.id}}">{{project.name}}</a></button>
-  {{/each}}
-  {{/if}}
+  <div class='d-flex flex-column col-8 justify-content-center'>
+    {{#if trip.length}}
+    {{#each trip as |trip|}}
+    <button type='button' class='btn btn-primary btn-lg m-2'><a class='text-white link-underline-primary'
+        href='/trip/{{trip.id}}'>{{trip.name}}</a></button>
+    {{/each}}
+    {{/if}}
+  </div>
 </div>
 
+{{!-- {{#if trips.length}}
+{{#each trips as |trip|}}
+<div class="row mb-2">
+  <div class="col-md-8">
+    <h4><a href="/trip/{{trip.id}}">{{trip.name}}</a></h4>
+  </div>
+  <div class="col-md-4">
+    <button class="btn btn-sm btn-danger" data-id="{{trip.id}}">DELETE</button>
+  </div>
+</div>
+{{/each}}
+</div>
+{{/if}}
+</div> --}}
 
 {{!-- <div class="row mt-4">
   <div class="col-md-6">
@@ -60,4 +77,4 @@
   {{/if}}
 </div> --}}
 
-<script src="./js/profile.js"></script>
+<script src='./js/profile.js'></script>

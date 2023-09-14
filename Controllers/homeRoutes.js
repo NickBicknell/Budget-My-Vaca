@@ -1,13 +1,12 @@
 const router = require('express').Router();
 
-const { Project, User,} = require('../models');    
+const { Project, User, Trip } = require('../models');    
 
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
     // Get all projects and JOIN with user data
-    console.log("works");
     const projectData = await Project.findAll({
       include: [
         {
@@ -76,7 +75,6 @@ router.get('/profile', withAuth, async (req, res) => {
 });
 
 router.get('/login', (req, res) => {
-  // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
     res.redirect('/profile');
     return;
@@ -85,26 +83,63 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+router.get('/newVacay', withAuth, async (req, res) => {
+  try {
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ['password'] },
+    });
 
-router.get('/newVacay', (req, res) => {
-  if (req.session.logged_in) {
-    res.redirect('/newVacay');
-    return;
+    const user = userData.get({ plain: true });
+
+    res.render('newVacay', {
+      ...user,
+      logged_in: true,
+      user_name: req.session.user_name,
+    });
+  } catch (err) {
+    res.status(500).json(err);
   }
-
-  res.render('newVacay');
 });
 
-router.get('/currentVacay', (req, res) => {
-  
-  if (req.session.logged_in) {
-    res.redirect('/currentVacay');
-    return;
-  }
+router.get('/currentVacay', withAuth, async (req, res) => {
+  try {
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ['password'] },
+    });
 
-  res.render('currentVacay');
+    const user = userData.get({ plain: true });
+
+    res.render('currentVacay', {
+      ...user,
+      logged_in: true,
+      user_name: req.session.user_name,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
+router.get('/trip/:id', async (req, res) => {
+  try {
+    const tripData = await Trip.findByPk(req.params.id);
 
+    const trip = tripData.get({ plain: true });
+
+    // const userData = await User.findByPk(req.session.user_id, {
+    //   attributes: { exclude: ['password'] },
+    // });
+
+    // const user = userData.get({ plain: true });
+
+    res.render('currentVacay', {
+      ...trip,
+      // ...user,
+      logged_in: true,
+      user_name: req.session.user_name,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 module.exports = router;
