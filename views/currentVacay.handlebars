@@ -1,7 +1,42 @@
-<h1 class="fs-1">{{name}}</h1>
-<h1 class='fs-3 mb-3'>Spending Money: {{budget}}</h1>
+{{!-- <h1 class="fs-1">{{name}}</h1>
+<h1 class='fs-3 mb-3'>Spending Money: {{budget}}</h1> --}}
 <button type='button' class='btn btn-primary mb-4'><a class='text-white link-underline-primary' id='new-activity-btn'
     href='/'>New Activity</a></button>
+
+ <button type="button" class='btn btn-primary mb-4' data-toggle="modal" data-target= "#myModal">
+  Current Activity 
+ </button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="myModalLabel"> Current Activity </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <ul> Name of Activity: {{modal-body}}</ul>
+        <ul> Day of Activity: {{id}}</ul>
+        <ul> Time of Activity: {{Activity}} </ul>
+        <ul> Cost of Activity: {{budget}} </ul>
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
 <div class='row mb-5'>
   <div class='col-2'>
     <h1 class='fs-4 text-decoration-underline'>Days</h1>
@@ -18,4 +53,7 @@
   </div>
 </div>
 
+
 <script src="./js/trip.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
