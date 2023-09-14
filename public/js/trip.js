@@ -31,9 +31,11 @@ const newVacayHandler = async (event) => {
         body: JSON.stringify({ name, days: parseInt(days), budget: parseInt(budget) }),
         headers: { 'Content-Type': 'application/json' },
       });
-  
+
+      const returnData = await response.json();
+      console.log(returnData);
       if (response.ok) {
-        document.location.replace('/currentVacay');
+        document.location.replace(`/trip/${returnData.id}`);
       } else {
         alert(response.statusText);
       }

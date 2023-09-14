@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-const { Project, User } = require('../models');    
+const { Project, User, Trip } = require('../models');    
 
 const withAuth = require('../utils/auth');
 
@@ -111,6 +111,29 @@ router.get('/currentVacay', withAuth, async (req, res) => {
 
     res.render('currentVacay', {
       ...user,
+      logged_in: true,
+      user_name: req.session.user_name,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/trip/:id', async (req, res) => {
+  try {
+    const tripData = await Trip.findByPk(req.params.id);
+
+    const trip = tripData.get({ plain: true });
+
+    // const userData = await User.findByPk(req.session.user_id, {
+    //   attributes: { exclude: ['password'] },
+    // });
+
+    // const user = userData.get({ plain: true });
+
+    res.render('currentVacay', {
+      ...trip,
+      // ...user,
       logged_in: true,
       user_name: req.session.user_name,
     });
