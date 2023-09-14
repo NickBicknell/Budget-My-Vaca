@@ -5,7 +5,10 @@ const withAuth = require('../../utils/auth');
 router.post('/', withAuth, async (req, res) => {
   console.log("BODY", req.body);
   try {
-    const newTrip = await Trip.create(req.body);
+    const newTrip = await Trip.create({
+      ...req.body, 
+      user_id: req.session.user_id,
+    });
     console.log(newTrip);
     res.status(200).json(newTrip);
   } catch (err) {
