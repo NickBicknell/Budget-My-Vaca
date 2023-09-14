@@ -12,12 +12,12 @@ Activities.belongsTo(Trip, {
   foreignKey: 'trip_id'
 });
 
-// User.hasMany(Project, {
+// User.hasMany(Trip, {
 //   foreignKey: 'user_id',
 //   onDelete: 'CASCADE'
 // });
 
-// Project.belongsTo(User, {
+// Trip.belongsTo(User, {
 //   foreignKey: 'user_id'
 // });
 
