@@ -24,7 +24,7 @@ Activities.init(
       defaultValue: DataTypes.NOW,
     },
     time: {
-      type: DataTypes.DATE,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     trip_id: {

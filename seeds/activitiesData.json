@@ -1,0 +1,108 @@
+[
+  {
+    "trip_id": 1,
+    "name": "Shopping",
+    "day": "1",
+    "cost": 150.00,
+    "time": "2"
+  },  
+  {
+    "trip_id": 1,
+    "name": "Dinner at Spencer's Steak & Spirits",
+    "day": "1",
+    "cost": 150.00,
+    "time": "7"  
+  },
+  {
+    "trip_id": 1,
+    "name": "Breakfast at Skywalk",
+    "day": "2",
+    "cost": 20.00,
+    "time": "9"
+  },
+  {
+    "trip_id": 1,
+    "name": "Skiing",
+    "day": "2",
+    "cost": 105.00,
+    "time": "10"
+  },
+  {
+    "trip_id": 1,
+    "name": "Lunch at Peak 9 Pizza",
+    "day": "2",
+    "cost": 50.00,
+    "time": "1"
+  },
+  {
+    "trip_id": 1,
+    "name": "Dinner at Pub at the Hub",
+    "day": "2",
+    "cost": 100.00,
+    "time": "7"
+  },
+  {
+    "trip_id": 1,
+    "name": "Breakfast at Skywalk",
+    "day": "3",
+    "cost": 20.00,
+    "time": "9"
+  },
+  {
+    "trip_id": 1,
+    "name": "Snowboarding",
+    "day": "3",
+    "cost": 105.00,
+    "time": "10"
+  },
+  {
+    "trip_id": 1,
+    "name": "Lunch at Beaver Den Food Court",
+    "day": "3",
+    "cost": 50.00,
+    "time": "1"
+  },
+  {
+    "trip_id": 1,
+    "name": "Dinner at Pub at Copper Top",
+    "day": "3",
+    "cost": 100.00,
+    "time": "7"
+  },
+  {
+    "trip_id": 1,
+    "name": "Breakfast at Skywalk",
+    "day": "4",
+    "cost": 20.00,
+    "time": "9"
+  },
+  {
+    "trip_id": 1,
+    "name": "Dog Sleading",
+    "day": "4",
+    "cost": 180.00,
+    "time": "10"
+  },
+  {
+    "trip_id": 1,
+    "name": "Dinner and Drinks at Ember",
+    "day": "4",
+    "cost": 200.00,
+    "time": "7"
+  },
+  {
+    "trip_id": 1,
+    "name": "Brunch at Breckfast",
+    "day": "5",
+    "cost": 50.00,
+    "time": "11"
+  },
+  {
+    "trip_id": 1,
+    "name": "Shopping",
+    "day": "5",
+    "cost": 150.00,
+    "time": "1"
+  }
+]
+
