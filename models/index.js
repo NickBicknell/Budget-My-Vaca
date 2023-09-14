@@ -19,7 +19,7 @@ User.hasMany(Trip, {
 
 Trip.belongsTo(User, {
   foreignKey: 'user_id'
- });
+});
 
 module.exports = { Trip, Activities, User };
 
