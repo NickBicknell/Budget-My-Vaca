@@ -4,13 +4,14 @@ const withAuth = require('../../utils/auth');
 
 router.post('/', withAuth, async (req, res) => {
   try {
+    console.log(req.body);
     const newActivities = await Activities.create({
       ...req.body,
-      trip_id: req.session.trip_id,
     });
-
+    console.log(newActivities);
     res.status(200).json(newActivities);
   } catch (err) {
+    console.error(err);
     res.status(400).json(err);
   }
 });

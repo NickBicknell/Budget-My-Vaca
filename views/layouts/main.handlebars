@@ -22,7 +22,6 @@
       <ul class="nav justify-content-end">
         {{#if logged_in}}
         <h2 class="text-white fs-3 m-2 font-monospace">Welcome {{user_name}}!</h2>
-
         <li class="nav-item">
           <a class="nav-link text-white text-decoration-underline fs-4 font-monospace" href='/profile'>profile</a>
         </li>
@@ -36,11 +35,9 @@
     {{/if}}
   </nav>
   <main class='container container-fluid mt-5'>
-    <!-- Render the sub layout -->
     {{{body}}}
   </main>
 
-  <!-- Render script for logged in users only -->
   {{#if logged_in}}
   <script src='/js/logout.js'></script>
   {{/if}}
