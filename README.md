@@ -1,5 +1,14 @@
 # Budget-My-Vacay
 
+<p>
+https://img.shields.io/badge/-JavaScript-yellow
+https://img.shields.io/badge/-Express-red
+https://img.shields.io/badge/-Sequelize-blue
+https://img.shields.io/badge/-Heroku-purple
+https://img.shields.io/badge/-Node-green
+https://img.shields.io/badge/-Animate.CSS-orange
+<p>
+
 # About
 This application allows users to budget the expenses of their vacation.
 
@@ -7,16 +16,16 @@ This application allows users to budget the expenses of their vacation.
 The application allows the user to put in the city they are visiting and for how many days. Then they add in the activities they would like to do and what they cost and the application will do the budgeting for the user.
 
 # Challenges
-Some challenges we faced were 
+Some challenges we faced were getting the previous trips to save and show up and getting all our merges to sync up correctly.
 
 # Future Development
-For future development, 
+For future development, we want to add APIs the will allow the user to look up different activities and maps out travel routes. We also want to add a USD crrency converter and a time zone converter.
 
 # Motivation
 Our motivation was that we like to travel and would love to have an application that helps us plan and budget our vacations.
 
 # Sucess
-We succeeded in creating a working vacation budgeting application.
+We succeeded working together and creating a functional vacation budgeting application.
 
 # Contributors
 Nick Bicknell, Joshua James, & Mandy Douglas.
