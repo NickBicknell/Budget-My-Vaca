@@ -1,13 +1,16 @@
 # Budget-My-Vacay
 
 <p>
-https://img.shields.io/badge/-JavaScript-yellow
-https://img.shields.io/badge/-Express-red
-https://img.shields.io/badge/-Sequelize-blue
-https://img.shields.io/badge/-Heroku-purple
-https://img.shields.io/badge/-Node-green
-https://img.shields.io/badge/-Animate.CSS-orange
-<p>
+<img src="https://img.shields.io/badge/-JavaScript-yellow" />
+<img src ="https://img.shields.io/badge/-Express-red" />
+<img src ="https://img.shields.io/badge/-Sequelize-blue" />
+<img src ="https://img.shields.io/badge/-Heroku-purple" />
+<img src="https://img.shields.io/badge/-Node-green" />
+<img src="https://img.shields.io/badge/-Animate.CSS-orange" />
+<img src="https://img.shields.io/badge/-Bootstrap-pink" />
+<img src="https://img.shields.io/badge/-Express Handlebars-gold" />
+<img src="https://img.shields.io/badge/-MySQL-magenta" />
+</p>
 
 # About
 This application allows users to budget the expenses of their vacation.
