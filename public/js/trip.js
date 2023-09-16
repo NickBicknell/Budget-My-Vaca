@@ -1,205 +1,176 @@
-`<h1 class='fs-2 mb-3'>Spending Money: {{trip_budget}}</h1>
-<button type='button' class='btn btn-primary mb-4'><a class='text-white link-underline-primary' id='new-activity-btn'
-    href='/'>New Activity</a></button>
-<div class='row mb-5'>
-  <div class='col-2'>
-    <h1 class='fs-4 text-decoration-underline'>Days</h1>
-  </div>
-  <div class='col-10'>
-    <h1 class='fs-4 text-decoration-underline'>Activities</h1>
-  </div>
-</div>
-<div class='row mb-2'>
-  <div class='col-2'>
-    <h1 class='fs-5'>Day 1</h1>
-  </div>
-  <div class='col-10'>
-    -- Activities will go here --
-  </div>
-</div>`;
-
 const trip_id = document.querySelector('#trip_id')?.value;
 const table = document.querySelector('#dayRows');
-
-const newVacayHandler = async (event) => {
-  event.preventDefault();
-
-  const name = document.querySelector('#vacay-name').value.trim();
-  const days = document.querySelector('#trip-days').value.trim();
-  const budget = document.querySelector('#start-budget').value.trim();
-  const airfare = document.querySelector('#airfare').value.trim();
-  const hotel = document.querySelector('#hotel').value.trim();
-
-  if (name && days && budget) {
-    const response = await fetch('/api/trips', {
-      method: 'POST',
-      body: JSON.stringify({
-        name,
-        days: parseInt(days),
-        budget: parseInt(budget),
-        airfare: parseInt(airfare),
-        hotel: parseInt(hotel),
-      }),
-      headers: { 'Content-Type': 'application/json' },
-    });
-
-    const returnData = await response.json();
-    console.log(returnData);
-    if (response.ok) {
-      document.location.replace(`/trip/${returnData.id}`);
-    } else {
-      alert(response.statusText);
-    }
-  }
-};
-
-document
-  .querySelector('.new-vacay-form')
-  ?.addEventListener('submit', newVacayHandler);
-
-const newActivityHandler = async (event) => {
-  event.preventDefault();
-
-  const name = document.querySelector('#activity-name').value;
-  const day = document.querySelector('#activity-day').value;
-  const time = document.querySelector('#activity-time').value;
-  const cost = document.querySelector('#activity-cost').value;
-
-
-  if (name && day && time && cost) {
-    const response = await fetch('/api/activitiesRoutes', {
-      method: 'POST',
-      body: JSON.stringify({
-        name,
-        day,
-        time,
-        cost,
-        trip_id: parseInt(trip_id),
-      }),
-      headers: { 'Content-Type': 'application/json' },
-    });
-
-    if (!response.ok) {
-      alert(response.statusText);
-    }
-  }
-};
-
-document
-  .querySelector('.new-activity-form')
-  ?.addEventListener('submit', newActivityHandler);
-
-// function getTripData () {
-//     const url = "http://localhost:3001/trip";
-//     const options = {
-//       method: "GET",
-//     //   headers: {
-//     //     "trip_id": `${id}`,
-//     //   },
-//     };
-
-//     return fetch(url, options);
-//   };
-
-// window.onload = function getTripData() {
-//     fetch("http://localhost:3001/trip")
-//     .then(response => response.json())
-//     .then(data => console.log(data))
-// };
-
+const modals = document.querySelector('#modals');
 let rowDays;
 
+const newVacayHandler = async (event) => {
+    event.preventDefault();
+
+    const name = document.querySelector('#vacay-name').value.trim();
+    const days = document.querySelector('#trip-days').value.trim();
+    const budget = document.querySelector('#start-budget').value.trim();
+    const airfare = document.querySelector('#airfare').value.trim();
+    const hotel = document.querySelector('#hotel').value.trim();
+
+    if (name && days && budget) {
+        const response = await fetch('/api/trips', {
+            method: 'POST',
+            body: JSON.stringify({
+                name,
+                days: parseInt(days),
+                budget: parseInt(budget),
+                airfare: parseInt(airfare),
+                hotel: parseInt(hotel),
+            }),
+            headers: { 'Content-Type': 'application/json' },
+        });
+
+        const returnData = await response.json();
+        console.log(returnData);
+        if (response.ok) {
+            document.location.replace(`/trip/${returnData.id}`);
+        } else {
+            alert(response.statusText);
+        }
+    }
+};
+
+document
+    .querySelector('.new-vacay-form')
+    ?.addEventListener('submit', newVacayHandler);
+
+const newActivityHandler = async (event) => {
+    event.preventDefault();
+
+    const name = document.querySelector('#activity-name').value;
+    const day = document.querySelector('#activity-day').value;
+    const time = document.querySelector('#activity-time').value;
+    const cost = document.querySelector('#activity-cost').value;
+
+    if (name && day && time && cost) {
+        const response = await fetch('/api/activitiesRoutes', {
+            method: 'POST',
+            body: JSON.stringify({
+                name,
+                day,
+                time,
+                cost,
+                trip_id: parseInt(trip_id),
+            }),
+            headers: { 'Content-Type': 'application/json' },
+        });
+        const result = await response.json();
+        console.log(result);
+        if (!response.ok) {
+            alert(response.statusText);
+        }
+        console.log(rowDays);
+        rowDays.activities.push(result);
+        generateDays();
+        location.reload();
+    }
+};
+
+document
+    .querySelector('.new-activity-form')
+    ?.addEventListener('submit', newActivityHandler);
+
+
+
 window.onload = fetch(`/api/trips/${trip_id}`, {
-  method: 'GET',
+    method: 'GET',
 })
-  .then(function (response) {
-    return response.json();
-  })
-  .then(function (data) {
-    console.log(data);
-    rowDays = data;
-    generateDays();
-  });
+    .then(function (response) {
+        return response.json();
+    })
+    .then(function (data) {
+        console.log(data);
+        rowDays = data;
+        generateDays();
+    })
+    .catch( function (err) {
+        console.error(err);
+
+    });
 
 function generateDays() {
-    console.log("DATA: ", rowDays);
-
-    for(i = 0; i < rowDays.days; i++) {
+    console.log('DATA: ', rowDays);
+    
+    table.innerHTML = '';
+    for (let i = 0; i < rowDays.days; i++) {
         const row = `
-     <div class='row mb-2'>
-         <div class='col-2'>
-             <h1 class='fs-5'>Day ${i+1}</h1>
+     <div class='row border-bottom py-3'>
+         <div class='col-1 border-end'>
+             <h1 class='fs-4'>Day ${i + 1}</h1>
          </div>
-         <div class='col-10'>
+         <div class="col-1"></div>
+         <div class='col-9 modals'>
+        ${generateActivities(i + 1)}
+         
 
          </div>
-     </div>`
-     table.innerHTML+=row;
+     </div>`;
+        table.innerHTML += row;
     }
 }
 
-// function updateBudget() {
-//     const budget = document.querySelector('#start-budget').value.trim();
-//     const airfare = document.querySelector('#airfare').value.trim();
-//     const hotel = document.querySelector('#hotel').value.trim();
 
-//     console.log(budget, airfare, hotel);
-// }
 
-// window.onload = function generateDays() {
-//     const days = document.querySelector('#trip-days');
-//     const times = parseInt(days);
-//     let table = document.querySelector('#dayRows');
-//     console.log("Times: ", times);
-//     console.log("Days: ", days);
-
-//     for (let i = 0; i < times; i++) {
-//         console.log(i);
-//         const appendDays = `
-//     <div class='row mb-2'>
-//         <div class='col-2'>
-//             <h1 class='fs-5'>Day ${times[i]}</h1>
-//         </div>
-//         <div class='col-10'>
-
-//         </div>
-//     </div>`;
-//     }
-//     // table.appendChild(appendDays);
-
-// };
-
-// const myModal = document.getElementById('myModal')
-// const myInput = document.getElementById('myInput')
-
-// myModal.addEventListener('shown.bs.modal', () => {
-//   myInput.focus()
-// })
-
-// const generateCurrentVacay = async (event) => {
-//     event.preventDefault();
-
-//     // const name = document.querySelector('#vacay-name').value.trim();
-//     // const days = document.querySelector('#trip-days').value.trim();
-//     // const budget = document.querySelector('#start-budget').value.trim();
-
-//     if (name && days && budget) {
-//         const response = await fetch('/api/trips', {
-//             method: 'GET',
-//             body: JSON.stringify({
-//                 name,
-//                 days: parseInt(days),
-//                 budget: parseInt(budget),
-//             }),
-//             headers: { 'Content-Type': 'application/json' },
-//         });
-
-//         const returnData = await response.json();
-//         console.log(returnData);
-//         if (response.ok) {
-//             document.location.replace(`/trip/${returnData.id}`);
-//         } else {
-//             alert(response.statusText);
-//         }
-//     }
-// };
+function generateActivities(day) {
+    let modals = '';
+    console.log(rowDays.activities);
+    if (!rowDays.activities) {
+        return '';
+    }
+    for (let i = 0; i < rowDays.activities.length; i++) {
+    const activity = rowDays.activities[i]
+    if (activity.day == day) {
+    const modal = `<button
+        class='text-white link-underline-primary button btn btn-primary mb-4'
+        data-bs-toggle='modal'
+        data-bs-target='#acModal'
+        id='new-activity-btn'
+        >${activity.name}</button>
+        
+        <div
+        class='modal fade'
+        id='acModal'
+        tabindex='-1'
+        aria-labelledby='exampleModalLabel'
+        aria-hidden='true'>
+        <div class='modal-dialog'>
+            <div class='modal-content'>
+                <div class='modal-header'>
+                    <h5 class='modal-title fs-3'>${activity.name}</h5>
+                    <button
+                    type='button'
+                    class='btn-close'
+                    data-bs-dismiss='modal'
+                    aria-label='Close'></button>
+         </div>
+         <div class='modal-body'>
+           <form class='form new-activity-form'>
+             <div class='form-group col-8 mb-2'>
+               <label class="fs-4 mb-2">Day ${activity.day}</label>
+             </div>
+             <div class='form-group col-8 mb-2'>
+               <label class="fs-4 mb-2">Time: ${activity.time}</label>
+             </div>
+             <div class='form-group col-8 mb-2'>
+               <label class="fs-4 mb-2">Cost: $${activity.cost}</label>
+             </div>
+             <button
+               type='close'
+               data-bs-dismiss='modal'
+               class='btn btn-secondary'
+             >Close</button>
+           </form>
+         </div>
+       </div>
+     </div>
+   </div>`;
+   modals += modal;
+    }
+}
+return modals;
+}
