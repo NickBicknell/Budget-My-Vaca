@@ -40,7 +40,7 @@ Activities.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'Activities',
+    modelName: 'activities',
   }
 );
 

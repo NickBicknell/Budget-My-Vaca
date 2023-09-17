@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-const { User, Trip } = require('../models');    
+const { User, Trip, Activities } = require('../models');    
 
 const withAuth = require('../utils/auth');
 
@@ -107,18 +107,23 @@ router.get('/newVacay', withAuth, async (req, res) => {
 
 router.get('/trip/:id', async (req, res) => {
   try {
-    const tripData = await Trip.findByPk(req.params.id);
+    const tripData = await Trip.findByPk(req.params.id, {include: [Activities]});
 
     const trip = tripData.get({ plain: true });
-
+    console.log(trip);
+    const balance = trip.activities.reduce((total, activity) => total - activity.cost, trip.budget)
     res.render('currentVacay', {
       ...trip,
+      balance,
       logged_in: true,
       user_name: req.session.user_name,
     });
   } catch (err) {
+    console.error(err);
     res.status(500).json(err);
   }
 });
+
+
 
 module.exports = router;
