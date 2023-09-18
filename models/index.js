@@ -1,7 +1,6 @@
 const Trip = require('./Trip');
 const Activities = require('./Activities');
 const User = require('./User');
-// const Project = require('./Project');
 
 Trip.hasMany(Activities, {
   foreignKey: 'trip_id',
@@ -22,8 +21,3 @@ Trip.belongsTo(User, {
 });
 
 module.exports = { Trip, Activities, User };
-
-
-
-
-

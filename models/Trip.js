@@ -47,4 +47,3 @@ Trip.init(
 );
 
 module.exports = Trip;
-

@@ -1,25 +1,54 @@
 # Budget-My-Vacay
 
-# About
-This application allows users to budget the expenses of their vacation.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-# Desctiption
-The application allows the user to put in the city they are visiting and for how many days. Then they add in the activities they would like to do and what they cost and the application will do the budgeting for the user.
+<p>
+<img src="https://img.shields.io/badge/-JavaScript-yellow" />
+<img src ="https://img.shields.io/badge/-Express-red" />
+<img src ="https://img.shields.io/badge/-Sequelize-blue" />
+<img src ="https://img.shields.io/badge/-Heroku-purple" />
+<img src="https://img.shields.io/badge/-Node-green" />
+<img src="https://img.shields.io/badge/-Animate.CSS-orange" />
+<img src="https://img.shields.io/badge/-Bootstrap-pink" />
+<img src="https://img.shields.io/badge/-Express Handlebars-gold" />
+<img src="https://img.shields.io/badge/-MySQL-magenta" />
+</p>
 
-# Challenges
-Some challenges we faced were 
+## Desctiption
 
-# Future Development
-For future development, 
+Budget My Vacay was created to relieve stress and help users plan when traveling. This application allows the user to organize, plan, and budget their vacation with ease. The development of this app has helped us become more familiar and experienced with creating a full stack application utilizing routes, databases, handlebars, and javascript to make an elaborate and interactive application.
 
-# Motivation
-Our motivation was that we like to travel and would love to have an application that helps us plan and budget our vacations.
+## Table of Contents 
 
-# Sucess
-We succeeded in creating a working vacation budgeting application.
+[Installation](#installation)
 
-# Contributors
-Nick Bicknell, Joshua James, & Mandy Douglas.
+[Usage](#usage)
+
+[Credits](#credits)
+
+[License](#license)
+
+[User Story](#user-story)
+
+[Acceptance Criteria](#acceptance-criteria)
+
+## Installation
+
+`npm i`
+
+## Usage
+
+When the user first runs/opens the application, they will be greeted with the homepage of the of Budget My Vacay. From there the user will have to signup or login. After logging in, the user will be redirected to the profile page where they can view their previous vacations or start a new one. When starting a new one they are asked to input the name, budget, how many days, cost of airfare, and cost of hotel stay. After inputting all the information they will be redirected to their new trip page displaying the name, spending money, a button to add new activities, and a table displaying the amount of days they are traveling. The spending cash is the initial budget minus the airfare and hotel expense. Whenever the new activity button is clicked they are asked to input the activity name, day they are doing on, the time they are doing it, and the cost. A new button connected to a modal with that activities information is created under the day they put the activity under. The cost of the activity is then subtracted from the spending cash.
+
+## Credits
+
+Nick Bicknell
+Joshua James
+Mandy Douglas
+
+## License
+
+Please refer to the LICENSE in the repo.
 
 ## User Story
 
@@ -62,3 +91,11 @@ THEN the table is adjusted accordingly
 WHEN the user finishes inputing all their expenses 
 THEN they can edit or delete their planner
 ```
+
+## Screenshots
+
+![Budget My Vacay](./images/budget-my-vacay.png?raw=true)
+
+## Link to App
+
+[Budget-My-Vacay-Link](https://)
