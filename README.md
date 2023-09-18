@@ -100,4 +100,4 @@ THEN they can edit or delete their planner
 
 ## Link to App
 
-[Budget-My-Vacay-Link](https://)
+[Budget-My-Vacay-Link](https://fast-ridge-13851-d2c78560f8b5.herokuapp.com/)
