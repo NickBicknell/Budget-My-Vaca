@@ -45,4 +45,3 @@ Activities.init(
 );
 
 module.exports = Activities;
-

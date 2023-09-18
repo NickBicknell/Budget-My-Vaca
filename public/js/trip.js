@@ -1,8 +1,10 @@
+// global variables
 const trip_id = document.querySelector('#trip_id')?.value;
 const table = document.querySelector('#dayRows');
 const modals = document.querySelector('#modals');
 let rowDays;
 
+// creates a new trip based on user input from newVacay and uploads it to the database
 const newVacayHandler = async (event) => {
     event.preventDefault();
 
@@ -39,6 +41,7 @@ document
     .querySelector('.new-vacay-form')
     ?.addEventListener('submit', newVacayHandler);
 
+// creates a new activity and uploads it to the database
 const newActivityHandler = async (event) => {
     event.preventDefault();
 
@@ -76,7 +79,7 @@ document
     ?.addEventListener('submit', newActivityHandler);
 
 
-
+// on currentVacay page load make a fetch request for all the data on that trip
 window.onload = fetch(`/api/trips/${trip_id}`, {
     method: 'GET',
 })
@@ -93,6 +96,7 @@ window.onload = fetch(`/api/trips/${trip_id}`, {
 
     });
 
+// generates rows of days based on how many days user inputted for the trip 
 function generateDays() {
     console.log('DATA: ', rowDays);
     
@@ -114,8 +118,7 @@ function generateDays() {
     }
 }
 
-
-
+// generates activities as a button and adds it to the selected days row
 function generateActivities(day) {
     let modals = '';
     console.log(rowDays.activities);
