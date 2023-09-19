@@ -44,9 +44,13 @@ When the user first runs/opens the application, they will be greeted with the ho
 
 ## Credits
 
+
 Nick Bicknell
+
 Joshua James
+
 Mandy Douglas
+
 
 ## License
 
