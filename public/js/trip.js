@@ -132,13 +132,13 @@ function generateActivities(day) {
     const modal = `<button
         class='text-white link-underline-primary button btn btn-primary mb-4'
         data-bs-toggle='modal'
-        data-bs-target='#acModal${day}'
+        data-bs-target='#acModal${activity.name}'
         id='new-activity-btn'
         >${activity.name}</button>
         
         <div
         class='modal fade'
-        id='acModal${day}'
+        id='acModal${activity.name}'
         tabindex='-1'
         aria-labelledby='exampleModalLabel'
         aria-hidden='true'>
