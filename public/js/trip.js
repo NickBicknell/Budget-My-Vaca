@@ -127,17 +127,18 @@ function generateActivities(day) {
     }
     for (let i = 0; i < rowDays.activities.length; i++) {
     const activity = rowDays.activities[i]
+    console.log('activity ', activity);
     if (activity.day == day) {
     const modal = `<button
         class='text-white link-underline-primary button btn btn-primary mb-4'
         data-bs-toggle='modal'
-        data-bs-target='#acModal'
+        data-bs-target='#acModal${day}'
         id='new-activity-btn'
         >${activity.name}</button>
         
         <div
         class='modal fade'
-        id='acModal'
+        id='acModal${day}'
         tabindex='-1'
         aria-labelledby='exampleModalLabel'
         aria-hidden='true'>
